@@ -1,4 +1,29 @@
 ---
+# Domain configuration
+domain: testmydom.org
+subdomain: argocd
+
+# Certificate configuration
+tlsSecretName: argocd-testmydom-org-tls
+certificate:
+  name: argocd-certificate
+  enabled: true
+  issuer:
+    name: letsencrypt-cloudflare
+    kind: ClusterIssuer
+
+# Ingress configuration
+ingress:
+  name: argocd-ingress
+  enabled: true
+  className: traefik
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  service:
+    name: argo-cd-argocd-server
+    port: 80
+
+# Argo CD configuration
 argo-cd:
   dex:
     enabled: false

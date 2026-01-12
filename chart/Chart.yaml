@@ -3,9 +3,8 @@ apiVersion: v2
 name: argo-cd
 type: application
 description: ArgoCD Helm Chart for Kubernetes
-appVersion: v3.0.0
-version: 0.1.0
-kubeVersion: ">=1.25.0-0"
+appVersion: v0.0.1
+version: 0.0.1
 keywords:
   - argoproj
   - argocd
