@@ -22,11 +22,8 @@ It also combines the Helm chart with a Makefile to simplify and standardize depl
 git clone https://github.com/SimonaCatanoiu/argocd-k8s-deployment.git
 cd argocd-k8s-deployment
 
-# Update dependencies
-helm dependency update chart/
-
 # Install Argo CD
-helm install argo-cd chart/ -f chart/values.yaml --namespace argocd --create-namespace
+make install
 ```
 
 ## Using the Makefile

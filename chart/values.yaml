@@ -1,26 +1,26 @@
 ---
 # Domain configuration
-domain: testmydom.org
-subdomain: argocd
+domain: <your-domain.com>  # Main domain (e.g., example.com)
+subdomain: <subdomain>  # Subdomain for ArgoCD (e.g., argocd)
 
 # Certificate configuration
-tlsSecretName: argocd-testmydom-org-tls
+tlsSecretName: <tls-secret-name>  # TLS secret name (e.g., argocd-yourdomain-tls)
 certificate:
-  name: argocd-certificate
+  name: <certificate-name>  # Certificate resource name
   enabled: true
   issuer:
-    name: letsencrypt-cloudflare
+    name: <issuer-name>  # ClusterIssuer name (e.g., letsencrypt-cloudflare)
     kind: ClusterIssuer
 
 # Ingress configuration
 ingress:
-  name: argocd-ingress
+  name: <ingress-name>  # Ingress resource name
   enabled: true
-  className: traefik
+  className: <ingress-class>  # Ingress class (e.g., traefik, nginx)
   annotations:
-    kubernetes.io/ingress.class: traefik
+    kubernetes.io/ingress.class: <ingress-class>  # Same as className
   service:
-    name: argo-cd-argocd-server
+    name: <argocd-service-name>  # ArgoCD server service name
     port: 80
 
 # Argo CD configuration
